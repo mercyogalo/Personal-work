@@ -1,6 +1,7 @@
 from django.urls import path
+from . import views
 
-app="portfoliofeatures"
+app="portfoliomain"
 
 urlpatterns = [
     path("/", views.home, name="home"),
