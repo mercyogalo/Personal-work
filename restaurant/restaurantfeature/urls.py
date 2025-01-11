@@ -1,6 +1,8 @@
-from django.urls import path 
+from django.urls import path
 from . import views
 
+app_name = "restaurantfeature"
+
 urlpatterns = [
-    path("", views.home,index.html),
+    path("", views.home, name="home"),  
 ]
