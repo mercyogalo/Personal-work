@@ -7,3 +7,6 @@ def home(request):
 
 def menu(request):
     return render(request,'menu.html')
+
+def reservation(request):
+    return render(request,'reservation.html')
