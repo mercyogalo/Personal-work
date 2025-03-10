@@ -10,3 +10,6 @@ def menu(request):
 
 def reservation(request):
     return render(request,'reservation.html')
+
+def contact(request):
+    return render(request,'contact.html')
