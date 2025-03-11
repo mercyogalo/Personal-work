@@ -1,8 +1,18 @@
 from django.shortcuts import render
+from . models import Category, Product, Special, Testimonial
 
 # Create your views here.
 def home(request):
-    return render(request,'index.html')
+    category_items=Category.objects.all()
+    testimonials=Testimonial.objects.all()
+    specials=Special.objects.all()
+    context={
+        "category_items":category_items,
+        "testimonials":testimonials,
+        "specials":specials,
+    }
+    
+    return render(request,'index.html', context)
 
 
 def menu(request):
