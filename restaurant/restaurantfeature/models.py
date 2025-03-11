@@ -32,5 +32,8 @@ class Special(models.Model):
     
 class Testimonial(models.Model):
     name=models.CharField(max_length=150)
-    description=models.CharField( max_length=150)
-    models.ImageField(upload_to='testimonialimage/', default='default.jpg')
+    description=models.CharField( max_length=300)
+    image=models.ImageField(upload_to='testimonialimage/', default='default.jpg')
+    
+    def __str__(self):
+        return self.name
