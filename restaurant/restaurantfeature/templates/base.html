@@ -141,10 +141,8 @@ background-color:#C8B49B;
         <nav id="navmenu" class="navmenu">
           <ul>
             <li><a href="{% url "restaurantfeature:home" %}" class="active">Home<br></a></li>
+            <li><a href="{% url "restaurantfeature:about" %}">About</a></li>
             <li><a href="{% url "restaurantfeature:menu" %}">Menu</a></li>
-            <li><a href="#specials">Specials</a></li>
-            <li><a href="#events">Events</a></li>
-            <li><a href="#chefs">Chefs</a></li>
             <li><a href="{% url "restaurantfeature:reservation" %}">Reservation</a></li>
           
             <li><a href="{% url "restaurantfeature:contact" %}">Contact</a></li>
@@ -217,14 +215,16 @@ background-color:#C8B49B;
         </div>
 
         <div class="col-lg-4 col-md-12 footer-newsletter">
-          <h4>Our Newsletter</h4>
-          <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
-          <form action="forms/newsletter.php" method="post" class="php-email-form">
-            <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
-            <div class="loading">Loading</div>
-            <div class="error-message"></div>
-            <div class="sent-message">Your subscription request has been sent. Thank you!</div>
-          </form>
+
+          <h4>Location</h4>
+          
+          
+        <div class="mb-5" data-aos="fade-up" data-aos-delay="200">
+          <iframe style="border:0; width: 100%; height: 200px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus" frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div><!-- End Google Maps -->
+    
+
+
         </div>
 
       </div>
