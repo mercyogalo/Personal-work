@@ -11,14 +11,16 @@
     <!-- Page Title -->
     <div class="page-title position-relative" data-aos="fade" style="background-image: url({% static 'assets/img/page-title-bg.webp' %});">
       <div class="container position-relative">
-        <h1>BEHIND THE DISHES <br></h1>
-        <p>Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda numquam molestias.</p>
+        <h1>Experience Authentic African Flavors </h1>
+        <p>
+          Discover the rich, vibrant taste of Africa with every bite. Freshly prepared, locally sourced ingredients, and traditional recipes passed down through generations.
+        </p>
+      
         <nav class="breadcrumbs">
-          <ol>
-            <li><a href="index.html">BEHIND THE DISHES</a></li>
-            <li class="current">Starter Page</li>
-          </ol>
+        <a href="{% url "restaurantfeature:about" %}">Reserve Your Table</a>
         </nav>
+
+
       </div>
     </div><!-- End Page Title -->
 
@@ -150,7 +152,7 @@
           <div class=" menu-item ">
             <img src="{{special.image.url}}" class="menu-img" alt="">
             <div class="menu-content">
-              <a href="#">{{special.name}}</a><span>{{special.price}}</span>
+              <a href="#">{{special.name}}</a><span>ksh {{special.price}}</span>
             </div>
             <div class="menu-ingredients">
               {{special.description}}
@@ -186,8 +188,8 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Specials</h2>
-        <p>Check Our Specials</p>
+        <h2>Menu</h2>
+        <p>Check Our Menu</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">

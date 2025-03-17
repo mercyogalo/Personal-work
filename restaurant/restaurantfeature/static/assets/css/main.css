@@ -1121,12 +1121,6 @@ section,
   position: relative;
 }
 
-.menu .menu-img {
-  width: 80px;
-  border-radius: 50%;
-  float: left;
-  border: 8px solid color-mix(in srgb, var(--default-color), transparent 90%);
-}
 
 .menu .menu-content {
   margin-left: 95px;
