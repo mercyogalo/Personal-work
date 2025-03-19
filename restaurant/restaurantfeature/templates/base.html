@@ -226,11 +226,11 @@ background-color:#C8B49B;
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Useful Links</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
+            <li><a href="{% url "restaurantfeature:home" %}">Home</a></li>
+            <li><a href="{% url "restaurantfeature:about" %}">About us</a></li>
+            <li><a href="{% url "restaurantfeature:menu" %}">Menu</a></li>
+            <li><a href="{% url "restaurantfeature:reservation" %}">Reservation</a></li>
+            <li><a href="{% url "restaurantfeature:contact" %}">Contact</a></li>
           </ul>
         </div>
 
@@ -271,7 +271,7 @@ background-color:#C8B49B;
         <!-- You can delete the links only if you've purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+         <!--Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
       </div>
     </div>
 
