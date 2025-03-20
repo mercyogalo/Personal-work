@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from . models import Category, Product, Special, Testimonial
+from django.contrib import messages
 
 # Create your views here.
 def home(request):
@@ -19,6 +20,18 @@ def menu(request):
     return render(request,'menu.html')
 
 def reservation(request):
+    if request.method=="POST":
+        name=request.POST['name']
+        email=request.POST['email']
+        phone=request.POST['phone']
+        date=request.POST['date']
+        time=request.POST['time']
+        people=request.POST['people']
+        
+        messages.success(request, ("You reservation has been made succcessfully. Check your email for the details."))
+        return messages
+        
+    
     return render(request,'reservation.html')
 
 def contact(request):
