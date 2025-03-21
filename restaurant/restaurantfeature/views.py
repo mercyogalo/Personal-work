@@ -34,7 +34,16 @@ def reservation(request):
         return render(request,'reservation.html')
 
 def contact(request):
-    return render(request,'contact.html')
+    if request.method=="POST":
+        name=request.POST['name']
+        email=request.POST['email']
+        subject=request.POST['subject']
+        message=request.POST['message']
+        
+        messages.success(request,("Your message has been received successfully. Our team will get back to you shortly"))
+        return redirect('restaurantfeature:contact')
+    else:
+        return render(request,'contact.html')
 
 def about(request):
     return render(request,'about.html')
