@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from . models import Category, Product, Special, Testimonial
 from django.contrib import messages
 
@@ -29,10 +29,9 @@ def reservation(request):
         people=request.POST['people']
         
         messages.success(request, ("You reservation has been made succcessfully. Check your email for the details."))
-        return messages
-        
-    
-    return render(request,'reservation.html')
+        return redirect('restaurantfeature:reservation')
+    else: 
+        return render(request,'reservation.html')
 
 def contact(request):
     return render(request,'contact.html')
