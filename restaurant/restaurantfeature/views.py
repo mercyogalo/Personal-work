@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from . models import Category, Product, Special, Testimonial
 from django.contrib import messages
+from django.core.mail import send_mail
 
 # Create your views here.
 def home(request):
@@ -39,6 +40,13 @@ def contact(request):
         email=request.POST['email']
         subject=request.POST['subject']
         message=request.POST['message']
+        
+        send_mail(
+            subject, #subject
+            message, #message
+            email, #from email
+            ['ogalomercy8@gmail.com'], #to email
+        )
         
         messages.success(request,("Your message has been received successfully. Our team will get back to you shortly"))
         return redirect('restaurantfeature:contact')
