@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from . models import Category, Product, Special, Testimonial
+from . models import Category, Product, Special, Testimonial, Chef
 from django.contrib import messages
 from django.core.mail import send_mail
 
@@ -54,4 +54,9 @@ def contact(request):
         return render(request,'contact.html')
 
 def about(request):
+    chefs=Chef.objects.all()
+    
+    context={
+        'chefs':chefs,
+    }
     return render(request,'about.html')

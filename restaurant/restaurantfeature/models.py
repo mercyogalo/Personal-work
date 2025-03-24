@@ -37,3 +37,9 @@ class Testimonial(models.Model):
     
     def __str__(self):
         return self.name
+    
+    
+class Chef(models.Model):
+    name=models.CharField( max_length=150)
+    profession=models.CharField(max_length=100)
+    image=models.ImageField( upload_to='chefimage/',default='default.jpg')
