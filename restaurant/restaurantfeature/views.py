@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from . models import Category, Product, Special, Testimonial, Chef
 from django.contrib import messages
 from django.core.mail import send_mail
+from django.core.mail import EmailMessage
 
 # Create your views here.
 def home(request):
@@ -29,16 +30,20 @@ def reservation(request):
         time=request.POST['time']
         people=request.POST['people']
         
-        hr_email='ogalomercy8@gmail.com'
+        
         reserver_subject='Reservation Confirmation Details'
-        reserver_message=(
-            f"""
+        reserver_message= f"""
               <html>
         <body style="background-color: #BB9F5E; font-family: Arial, sans-serif; color: #333;">
             <div style="background-color: #BB9F5E; padding: 20px; text-align: center;">
-                <h3 style="color: white;">Reservation Confirmation</h3>
+                <h3 style="color: white;">Reservation Confirmation  for table number  12A</h3>
+                
                 <p style="color: white;">Dear {name},</p>
-                <p style="color: white;">Thank you for your reservation. Below are the details:</p>
+                
+                <p style="color: white;">
+                Thank you for making your reservation with us.
+                </p>
+                
                 <table border="1" cellpadding="10" cellspacing="0" style="width: 80%; margin: 0 auto; border-collapse: collapse; background-color: white;">
                     <tr>
                         <th style="background-color: #BB9F5E; color: white; text-align: left; padding: 10px;">Name</th>
@@ -71,17 +76,20 @@ def reservation(request):
         </body>
         </html>
         """
-            
-        )
         
         
-        send_mail(
+        email=EmailMessage(
             reserver_subject, #subject
-            reserver_message, #message
-            hr_email, # from
+            reserver_message,
+             'ogalomercy8@gmail.com', # from
             [email], #to
-            fail_silently=False
         )
+        email.content_subtype='html' 
+        email.send(fail_silently=False)
+            
+     
+        
+
         
         messages.success(request, ("You reservation has been made succcessfully. Check your email for the details."))
         return redirect('restaurantfeature:reservation')
