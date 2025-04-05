@@ -41,11 +41,31 @@ def contact(request):
         subject=request.POST['subject']
         message=request.POST['message']
         
+        hr_subject=f'New Form Submission: {subject}'
+        hr_message=f'Name:{name} \n   Email:{email}   \n \n   Message:{message}'
+        hr_recipient='ogalomercy8@gmail.com'
+        
         send_mail(
-            subject, #subject
-            message, #message
+            hr_subject, #subject
+            hr_message, #message
             email, #from email
-            ['ogalomercy8@gmail.com'], #to email
+            [hr_recipient], #to email
+            fail_silently=False
+        )
+        
+        sender_message=(
+             f"Dear {name},\n\n"
+                "Thank you for reaching out to us. Our HR team has received your message and will get back to you shortly.\n\n"
+                "Best regards,\n Restaurantly.com"
+        )
+        sender_subject=f'Thank you for reaching out' 
+        
+        send_mail(
+            sender_subject,
+            sender_message,
+            hr_recipient,
+            [email],
+            fail_silently=False
         )
         
         messages.success(request,("Your message has been received successfully. Our team will get back to you shortly"))
