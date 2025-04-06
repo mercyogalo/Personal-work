@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from . models import Category, Product, Special, Testimonial, Chef
+from . models import Category, Product, Special, Testimonial, Chef, Gallery
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.core.mail import EmailMessage
@@ -142,8 +142,10 @@ def contact(request):
 
 def about(request):
     chefs=Chef.objects.all()
+    gallerys=Gallery.objects.all()
     
     context={
         'chefs':chefs,
+        'gallerys':gallerys
     }
     return render(request,'about.html')

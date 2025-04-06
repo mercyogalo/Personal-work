@@ -42,3 +42,10 @@ class Chef(models.Model):
     name=models.CharField( max_length=150)
     profession=models.CharField(max_length=100)
     image=models.ImageField( upload_to='chefimage/',default='default.jpg')
+    
+    
+class Gallery(models.Model):
+    image_1=models.ImageField(upload_to='galleryimage/',default='default.jpg')
+    image_2=models.ImageField(upload_to='galleryimage/',default='default.jpg')
+    
+    
