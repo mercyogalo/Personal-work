@@ -19,7 +19,12 @@ def home(request):
 
 
 def menu(request):
-    return render(request,'menu.html')
+    products=Product.objects.all()
+    
+    context={
+        "products":products
+    }
+    return render(request,'menu.html',context)
 
 def reservation(request):
     if request.method=="POST":
@@ -86,9 +91,6 @@ def reservation(request):
         )
         email.content_subtype='html' 
         email.send(fail_silently=False)
-            
-     
-        
 
         
         messages.success(request, ("You reservation has been made succcessfully. Check your email for the details."))
