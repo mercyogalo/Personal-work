@@ -20,9 +20,10 @@ def home(request):
 
 def menu(request):
     products=Product.objects.all()
+
     
     context={
-        "products":products
+        "products":products,
     }
     return render(request,'menu.html',context)
 
