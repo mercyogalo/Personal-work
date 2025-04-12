@@ -1039,10 +1039,7 @@ section,
   height: 100%;
   position: relative;
 }
-.why-us .about-section-one{
-  background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/159/123/original/Screenshot_2025-03-02_235511.png?1740948945);
 
-}
 .why-us .card-item span {
   color: var(--accent-color);
   display: block;
