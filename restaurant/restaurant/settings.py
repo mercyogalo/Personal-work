@@ -71,18 +71,18 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "restaurant.wsgi.application"
 
-
+from decouple import config
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "restaurantly",
-        "USER":"restaurantlyadmin",
-        "Host":"localhost",
-        "PASSWORD":"ogalo1818",
-        "PORT":"5432"
+        "NAME":config('DB_NAME'),
+        "USER":config('DB_USER'),
+        "Host":config('DB_HOST'),
+        "PASSWORD":config('DB_PASSWORD'),
+        "PORT":config('DB_PORT'),
     }
 }
 
