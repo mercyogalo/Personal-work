@@ -28,7 +28,7 @@
 
     <!-- Section Title -->
     <div class="container section-title" data-aos="fade-up">
-      <h2>Starters collection</h2>
+      <h2>Vegetarian collection</h2>
     </div><!-- End Section Title -->
 
     <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -40,39 +40,22 @@
             <div class="tab-pane active show" id="specials-tab-1">
               <div class="row">
 
+
+
+                {% for product in products  %}      
+
+                {% if  product.category.name == "Vegetarian" %}
                  <div class="col-lg-3 text-center order-1 order-lg-2">
-                  <img src="{% static 'assets/img/specials-2.png' %}" alt="" class="img-fluid">
+                  <img src="{{product.image.url}}" alt="" class="img-fluid  product-image">
                   <div class=" details order-2 order-lg-1">
-                    <h3>Nyama choma</h3>
+                    <h3>{{product.name}}</h3>
+                    <p>ksh {{product.price}}</p>
                   </div>
              </div>
 
-             <div class="col-lg-3 text-center order-1 order-lg-2">
-              <img src="{% static 'assets/img/specials-3.png' %}" alt="" class="img-fluid">
-              <div class=" details order-2 order-lg-1">
-                <h3>Nyama choma</h3>
-              </div>
-         </div>
-
-         <div class="col-lg-3 text-center order-1 order-lg-2">
-          <img src="{% static 'assets/img/specials-2.png' %}" alt="" class="img-fluid">
-          <div class=" details order-2 order-lg-1">
-            <h3>Nyama choma</h3>
-          </div>
-     </div>
-
-
-
-         <div class="col-lg-3 text-center order-1 order-lg-2">
-          <img src="{% static 'assets/img/specials-2.png' %}" alt="" class="img-fluid">
-          <div class=" details order-2 order-lg-1">
-            <h3>Nyama choma</h3>
-          </div>
-     </div>
-
-
+             {% endif %}
   
-
+             {% endfor %}
 
 
 
@@ -112,39 +95,20 @@
             <div class="tab-pane active show" id="specials-tab-1">
               <div class="row">
 
+                {% for product in products  %}      
+
+                {% if  product.category.name == "Main" %}
                  <div class="col-lg-3 text-center order-1 order-lg-2">
-                  <img src="{% static 'assets/img/specials-2.png' %}" alt="" class="img-fluid">
+                  <img src="{{product.image.url}}" alt="" class="img-fluid  product-image">
                   <div class=" details order-2 order-lg-1">
-                    <h3>Nyama choma</h3>
+                    <h3>{{product.name}}</h3>
+                    <p>ksh {{product.price}}</p>
+                  </div>
              </div>
-            </div>
 
-             <div class="col-lg-3 text-center order-1 order-lg-2">
-              <img src="{% static 'assets/img/specials-2.png' %}" alt="" class="img-fluid">
-              <div class=" details order-2 order-lg-1">
-                <h3>Nyama choma</h3>
-             
-              </div>
-         </div>
-
-
-         <div class="col-lg-3 text-center order-1 order-lg-2">
-          <img src="{% static 'assets/img/specials-3.png' %}" alt="" class="img-fluid">
-          <div class=" details order-2 order-lg-1">
-            <h3>Nyama choma</h3>
-       
-          </div>
-     </div>
-
-
-     <div class="col-lg-3 text-center order-1 order-lg-2">
-      <img src="{% static 'assets/img/specials-2.png' %}" alt="" class="img-fluid">
-      <div class=" details order-2 order-lg-1">
-        <h3>Nyama choma</h3>
-     
-      </div>
- </div>
-
+             {% endif %}
+  
+             {% endfor %}
 
    
 
@@ -184,35 +148,20 @@
             <div class="tab-pane active show" id="specials-tab-1">
               <div class="row">
 
+                {% for product in products  %}      
+
+                {% if  product.category.name == "Wine" %}
                  <div class="col-lg-3 text-center order-1 order-lg-2">
-                  <img src="{% static 'assets/img/specials-2.png' %}" alt="" class="img-fluid">
+                  <img src="{{product.image.url}}" alt="" class="img-fluid  product-image">
                   <div class=" details order-2 order-lg-1">
-                    <h3>Nyama choma</h3>
+                    <h3>{{product.name}}</h3>
+                    <p>ksh {{product.price}}</p>
                   </div>
              </div>
 
-             <div class="col-lg-3 text-center order-1 order-lg-2">
-              <img src="{% static 'assets/img/specials-3.png' %}" alt="" class="img-fluid">
-              <div class=" details order-2 order-lg-1">
-                <h3>Nyama choma</h3>
-              </div>
-         </div>
-
-         <div class="col-lg-3 text-center order-1 order-lg-2">
-          <img src="{% static 'assets/img/specials-2.png' %}" alt="" class="img-fluid">
-          <div class=" details order-2 order-lg-1">
-            <h3>Nyama choma</h3>
-          </div>
-     </div>
-
-
-
-         <div class="col-lg-3 text-center order-1 order-lg-2">
-          <img src="{% static 'assets/img/specials-2.png' %}" alt="" class="img-fluid">
-          <div class=" details order-2 order-lg-1">
-            <h3>Nyama choma</h3>
-          </div>
-     </div>
+             {% endif %}
+  
+             {% endfor %}
 
 
   
@@ -255,35 +204,20 @@
             <div class="tab-pane active show" id="specials-tab-1">
               <div class="row">
 
+                {% for product in products  %}      
+
+                {% if  product.category.name == "Kids" %}
                  <div class="col-lg-3 text-center order-1 order-lg-2">
-                  <img src="{% static 'assets/img/specials-2.png' %}" alt="" class="img-fluid">
+                  <img src="{{product.image.url}}" alt="" class="img-fluid  product-image">
                   <div class=" details order-2 order-lg-1">
-                    <h3>Nyama choma</h3>
+                    <h3>{{product.name}}</h3>
+                    <p>ksh {{product.price}}</p>
                   </div>
              </div>
 
-             <div class="col-lg-3 text-center order-1 order-lg-2">
-              <img src="{% static 'assets/img/specials-3.png' %}" alt="" class="img-fluid">
-              <div class=" details order-2 order-lg-1">
-                <h3>Nyama choma</h3>
-              </div>
-         </div>
-
-         <div class="col-lg-3 text-center order-1 order-lg-2">
-          <img src="{% static 'assets/img/specials-2.png' %}" alt="" class="img-fluid">
-          <div class=" details order-2 order-lg-1">
-            <h3>Nyama choma</h3>
-          </div>
-     </div>
-
-
-
-         <div class="col-lg-3 text-center order-1 order-lg-2">
-          <img src="{% static 'assets/img/specials-2.png' %}" alt="" class="img-fluid">
-          <div class=" details order-2 order-lg-1">
-            <h3>Nyama choma</h3>
-          </div>
-     </div>
+             {% endif %}
+  
+             {% endfor %}
 
 
   
@@ -329,35 +263,23 @@
             <div class="tab-pane active show" id="specials-tab-1">
               <div class="row">
 
+                {% for product in products  %}      
+
+                {% if  product.category.name == "Desserts" %}
                  <div class="col-lg-3 text-center order-1 order-lg-2">
-                  <img src="{% static 'assets/img/specials-2.png' %}" alt="" class="img-fluid">
+                  <img src="{{product.image.url}}" alt="" class="img-fluid  product-image">
                   <div class=" details order-2 order-lg-1">
-                    <h3>Nyama choma</h3>
+                    <h3>{{product.name}}</h3>
+                    <p>ksh {{product.price}}</p>
                   </div>
              </div>
 
-             <div class="col-lg-3 text-center order-1 order-lg-2">
-              <img src="{% static 'assets/img/specials-3.png' %}" alt="" class="img-fluid">
-              <div class=" details order-2 order-lg-1">
-                <h3>Nyama choma</h3>
-              </div>
-         </div>
-
-         <div class="col-lg-3 text-center order-1 order-lg-2">
-          <img src="{% static 'assets/img/specials-2.png' %}" alt="" class="img-fluid">
-          <div class=" details order-2 order-lg-1">
-            <h3>Nyama choma</h3>
-          </div>
-     </div>
+             {% endif %}
+  
+             {% endfor %}
+          
 
 
-
-         <div class="col-lg-3 text-center order-1 order-lg-2">
-          <img src="{% static 'assets/img/specials-2.png' %}" alt="" class="img-fluid">
-          <div class=" details order-2 order-lg-1">
-            <h3>Nyama choma</h3>
-          </div>
-     </div>
 
 
   

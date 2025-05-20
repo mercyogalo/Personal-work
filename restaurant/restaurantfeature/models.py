@@ -12,7 +12,6 @@ class Category (models.Model):
     
 class Product(models.Model):
     name=models.CharField( max_length=100)
-    description=models.CharField( max_length=150,  blank=True, null=True)
     category = models.ForeignKey(Category,  on_delete=models.CASCADE,default="1")
     price=models.DecimalField( max_digits=10, decimal_places=2)
     image=models.ImageField(upload_to='productimage/',  default='default.jpg')
@@ -43,3 +42,10 @@ class Chef(models.Model):
     name=models.CharField( max_length=150)
     profession=models.CharField(max_length=100)
     image=models.ImageField( upload_to='chefimage/',default='default.jpg')
+    
+    
+class Gallery(models.Model):
+    image_1=models.ImageField(upload_to='galleryimage/',default='default.jpg')
+    image_2=models.ImageField(upload_to='galleryimage/',default='default.jpg')
+    
+    
