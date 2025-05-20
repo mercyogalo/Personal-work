@@ -1,0 +1,328 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+{% block body %}
+
+  <main class="main">
+
+ 
+    <!-- Page Title -->
+    <div class="page-title position-relative" data-aos="fade" style="background-image: url({% static 'assets/img/download(11).jpg' %});">
+      <div class="container position-relative">
+        <h1>Experience Authentic African Flavors </h1>
+        <p>
+          Discover the rich, vibrant taste of Africa with every bite. Freshly prepared, locally sourced ingredients, and traditional recipes passed down through generations.
+        </p>
+      
+        <nav class="breadcrumbs">
+          <ol>
+        <p class="reserve-link">
+        <a href="{% url "restaurantfeature:reservation" %}">Reserve Your Table</a>
+      <p/>
+    </ol>
+  </nav>
+
+
+      </div>
+    </div><!-- End Page Title -->
+
+
+
+
+
+    <!-- Why Us Section -->
+    <section id="why-us" class="why-us section">
+
+ 
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 about-section-one" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-item-one">
+            </div>
+          </div><!-- Card Item -->
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="card-item text-center">
+              <h3>TRADITIONAL & MODERN </h3>
+     <p class="fst-italic">
+      Where classic flavors meet contemporary twists. A dining experience that celebrates both heritage and innovation.
+    </p>
+            </div>
+
+
+          </div><!-- Card Item -->
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="card-item-three">
+              
+          </div><!-- Card Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Why Us Section -->
+
+
+
+
+
+
+
+
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-lg-6 order-1 order-lg-2">
+            <img src="{% static 'assets/img/traditional-img-1.jpeg' %}" class="img-fluid about-img" alt="">
+          </div>
+          <div class="col-lg-6 order-2 order-lg-1 content">
+            <h3>
+              Welcome to the Taste of Africa
+            </h3>
+            <p class="fst-italic">
+              Bringing authentic flavors and rich traditions to your table.
+            </p>
+            <ul>
+              <li><i class="bi bi-check2-all"></i> <span>
+                Freshly prepared African dishes using locally sourced ingredients.
+              </span></li>
+              <li><i class="bi bi-check2-all"></i> <span>
+                Experience the bold spices and unique recipes passed down through generations.
+              </span></li>
+              <li><i class="bi bi-check2-all"></i> <span>
+                Our menu features favorites like jollof rice, nyama choma, sukuma wiki, chapati, and more all made with love and care.
+              </span></li>
+            </ul>
+
+            <p>
+              At [Your Restaurant Name], we celebrate the diversity of African cuisine. Whether you're craving a hearty meal, a spicy delicacy, or a sweet treat, our chefs are here to deliver an unforgettable dining experience. Come join us and savor the true taste of Africa.
+            </p>
+
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Specials Section -->
+  <section id="menu" class="menu section">
+
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="row">
+
+        <div class="col-lg-6">
+          <img src="{% static 'assets/img/chefs/chefs-1.jpg' %}" alt="" class="img-fluid">
+  </div>
+   
+        <div class="col-lg-6 mt-4 mt-lg-0">
+      <p class="text-center"> Our Specials</p>
+ 
+
+      {% for special  in specials %}
+    
+          <div class=" menu-item ">
+            <img src="{{special.image.url}}" class="menu-img" alt="">
+            <div class="menu-content">
+              <a href="#">{{special.name}}</a><span>ksh {{special.price}}</span>
+            </div>
+            <div class="menu-ingredients">
+              {{special.description}}
+            </div>
+          </div><!-- Menu Item -->
+
+          {% endfor %}
+
+          
+   </div>
+   
+        </div>
+      </div>
+
+    </div>
+
+  </section><!-- /Specials Section -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Specials Section -->
+    <section id="specials" class="specials section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Menu</h2>
+        <p>Check Our Menu</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row">
+          <div class="col-lg-12 mt-4 mt-lg-0">
+
+            <div class="tab-content">
+              <div class="tab-pane active show" id="specials-tab-1">
+                <div class="row">
+
+              {% for  category_item in  category_items %}
+
+                   <div class="col-lg-3 text-center order-1 order-lg-2">
+                    <img src="{{category_item.image.url}}" alt="" class="img-fluid category-image">
+                    <div class=" details order-2 order-lg-1">
+                      <h3>{{category_item.name}}</h3>
+                    </div>
+               </div>
+
+             
+               {% endfor %}
+
+    
+
+
+
+
+
+
+                </div>
+              </div>
+
+
+     
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Specials Section -->
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Testimonials</h2>
+        <p>What they're saying about us</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="swiper init-swiper" data-speed="600" data-delay="5000" data-breakpoints="{ &quot;320&quot;: { &quot;slidesPerView&quot;: 1, &quot;spaceBetween&quot;: 40 }, &quot;1200&quot;: { &quot;slidesPerView&quot;: 3, &quot;spaceBetween&quot;: 40 } }">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "breakpoints": {
+                "320": {
+                  "slidesPerView": 1,
+                  "spaceBetween": 40
+                },
+                "1200": {
+                  "slidesPerView": 3,
+                  "spaceBetween": 20
+                }
+              }
+            }
+          </script>
+          <div class="swiper-wrapper">
+
+
+
+          {% for testimonial  in testimonials  %}
+          
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>{{testimonial.description}}</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <img src="{{testimonial.image.url}}" class="testimonial-img" alt="">
+                <h3>{{testimonial.name}}</h3>
+              </div>
+            </div><!-- End testimonial item -->
+
+
+            {% endfor %}
+ 
+         
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+
+    </section><!-- /Testimonials Section -->
+
+    
+
+
+
+
+    
+   
+
+
+  </main>
+
+  {% endblock  %}

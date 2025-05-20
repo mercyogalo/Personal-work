@@ -1,0 +1,234 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+
+{% block body  %}
+
+
+
+  <!-- Page Title -->
+  <div class="page-title position-relative" data-aos="fade" style="background-image: url({% static 'assets/img/page-title-bg.webp' %});">
+    <div class="container position-relative">
+      <h1>ABOUT PAGE<br></h1>
+      <p>
+        Bringing People Together Through Great Food & Exceptional Service
+      </p>
+     
+    </div>
+  </div><!-- End Page Title -->
+
+
+
+
+
+
+    <!-- Events Section -->
+    <section id="events" class="events section">
+
+   
+
+      <div class="container">
+
+        <div class="swiper init-swiper" data-aos="fade-up" data-aos-delay="100">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              }
+            }
+          </script>
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="row gy-4 event-item">
+                <div class="col-lg-6">
+                  <img src="{% static 'assets/img/events-slider/events-slider-1.jpg' %}" class="img-fluid" alt="">
+                </div>
+                <div class="col-lg-6 pt-4 pt-lg-0 content">
+                  <h3>Birthday Parties</h3>
+                  <div class="price">
+                    <p><span>ksh 25,000 </span></p>
+                  </div>
+                  <p class="fst-italic">
+                    Celebrate your big day, Kenyan style! Whether it's a small family gathering or a big bash, we bring the nyama choma, local delicacies, and vibrant atmosphere to make your birthday unforgettable.
+                  </p>
+                  <ul>
+                    <li><i class="bi bi-check2-circle"></i> <span>Customized Kenyan & continental menu.</span></li>
+                    <li><i class="bi bi-check2-circle"></i> <span>Nyama choma live station available</span></li>
+                    <li><i class="bi bi-check2-circle"></i> <span>Complimentary birthday cake</span></li>
+                  </ul>
+                  <p>
+                    From playful kids' parties to elegant adult celebrations, our team blends tradition and modern style to make every birthday feel uniquely yours.
+                  </p>
+                </div>
+              </div>
+            </div><!-- End Slider item -->
+
+            <div class="swiper-slide">
+              <div class="row gy-4 event-item">
+                <div class="col-lg-6">
+                  <img src="{% static 'assets/img/events-slider/events-slider-2.jpg' %}" class="img-fluid" alt="">
+                </div>
+                <div class="col-lg-6 pt-4 pt-lg-0 content">
+                  <h3>Private Parties</h3>
+                  <div class="price">
+                    <p><span>ksh 30,000</span></p>
+                  </div>
+                  <p class="fst-italic">
+                    Host your exclusive gathering with a touch of Kenyan elegance. Whether it's a close family get-together, a reunion, or a quiet corporate event, we offer the perfect setting to relax, connect, and indulge.
+                  </p>
+                  <ul>
+                    <li><i class="bi bi-check2-circle"></i> <span>Reserved private dining space</span></li>
+                    <li><i class="bi bi-check2-circle"></i> <span>Kenyan-inspired food & drink packages (mutura, samosas, Kenyan cocktails)</span></li>
+                    <li><i class="bi bi-check2-circle"></i> <span> Maasai shuka or kitenge décor themes</span></li>
+                  </ul>
+                  <p>
+                    Bring together your favorite people for a cozy, culturally rich experience, where every detail reflects the warmth of African hospitality.
+                  </p>
+                </div>
+              </div>
+            </div><!-- End Slider item -->
+
+
+            <div class="swiper-slide">
+              <div class="row gy-4 event-item">
+                <div class="col-lg-6">
+                  <img src="{% static 'assets/img/events-slider/events-slider-3.jpg' %}" class="img-fluid" alt="">
+                </div>
+                <div class="col-lg-6 pt-4 pt-lg-0 content">
+                  <h3>Custom Parties</h3>
+                  <div class="price">
+                    <p><span>ksh 35,000</span></p>
+                  </div>
+                  <p class="fst-italic">
+                    Have a unique celebration in mind? From ruracio ceremonies to themed cultural nights, we offer tailored experiences that reflect your style, tradition, and personal taste.
+                  </p>
+                  <ul>
+                    <li><i class="bi bi-check2-circle"></i> <span>Fully customizable themes (Swahili coastal vibes, Maasai-inspired nights, modern fusion)</span></li>
+                    <li><i class="bi bi-check2-circle"></i> <span>Traditional music or DJ options</span></li>
+                    <li><i class="bi bi-check2-circle"></i> <span>Traditional music or DJ options</span></li>
+                  </ul>
+                  <p>
+                    Whatever your vision, we're here to turn it into a lively, memorable celebration infused with Kenyan spirit.
+                  </p>
+                </div>
+              </div>
+            </div><!-- End Slider item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+
+    </section><!-- /Events Section -->
+
+
+
+
+
+    <!-- Chefs Section -->
+    <section id="chefs" class="chefs section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Team</h2>
+        <p>
+          Passionate People. Authentic Flavors. Unmatched Hospitality.
+        </p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          {% for chef in  chefs %}
+          
+        
+
+          <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="member">
+              <img src="{{chef.image.url}}" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>{{chef.name}}</h4>
+                  <span>{{chef.profession}}</span>
+                </div>
+               
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          {% endfor %}
+
+
+
+
+   
+
+
+
+
+        </div>
+
+      </div>
+
+    </section><!-- /Chefs Section -->
+
+
+
+
+
+
+
+<!-- Gallery Section -->
+<section id="gallery" class="gallery section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Gallery</h2>
+      <p>Some photos from Our Restaurant</p>
+    </div><!-- End Section Title -->
+
+    <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="row g-0">
+
+
+        {% for gallery in gallerys  %}
+        
+        <div class="col-lg-3 col-md-4">
+          <div class="gallery-item">
+            <a href="{{gallery.image_1.url}}" class="glightbox" data-gallery="images-gallery">
+              <img src="{{gallery.image_2.url}}" alt="" class="img-fluid">
+            </a>
+          </div>
+        </div><!-- End Gallery Item -->
+
+        {% endfor %}
+
+  
+      </div>
+
+    </div>
+
+  </section><!-- /Gallery Section -->
+
+
+
+
+
+
+
+
+{% endblock  %}
