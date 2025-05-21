@@ -149,4 +149,4 @@ def about(request):
         'chefs':chefs,
         'gallerys':gallerys
     }
-    return render(request,'about.html')
+    return render(request,'about.html',context)
