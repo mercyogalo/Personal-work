@@ -21,6 +21,64 @@
 
           </div>
         </div><!-- End Page Title -->
+
+
+
+
+         
+  <section id="specials" class="specials section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Starters collection</h2>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="row">
+        <div class="col-lg-12 mt-4 mt-lg-0">
+
+          <div class="tab-content">
+            <div class="tab-pane active show" id="specials-tab-1">
+              <div class="row">
+
+
+
+                {% for product in products  %}      
+
+                {% if  product.category.name == "Starter" %}
+                 <div class="col-lg-3 text-center order-1 order-lg-2">
+                  <img src="{{product.image.url}}" alt="" class="img-fluid  product-image">
+                  <div class=" details order-2 order-lg-1">
+                    <h3>{{product.name}}</h3>
+                    <p>ksh {{product.price}}</p>
+                  </div>
+             </div>
+
+             {% endif %}
+  
+             {% endfor %}
+
+
+
+
+
+              </div>
+            </div>
+
+
+   
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </section><!-- /Specials Section -->
+
+
+
  
 
     
@@ -136,7 +194,7 @@
 
     <!-- Section Title -->
     <div class="container section-title" data-aos="fade-up">
-      <h2>Wine collection</h2>
+      <h2>Drinks collection</h2>
     </div><!-- End Section Title -->
 
     <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -150,7 +208,7 @@
 
                 {% for product in products  %}      
 
-                {% if  product.category.name == "Wine" %}
+                {% if  product.category.name == "Drinks" %}
                  <div class="col-lg-3 text-center order-1 order-lg-2">
                   <img src="{{product.image.url}}" alt="" class="img-fluid  product-image">
                   <div class=" details order-2 order-lg-1">
