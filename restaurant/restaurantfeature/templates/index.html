@@ -19,7 +19,7 @@
         <nav class="breadcrumbs">
           <ol>
         <p class="reserve-link">
-        <a href="{% url "restaurantfeature:reservation" %}">Reserve Your Table</a>
+        <a href="{% url "restaurantfeature:reservation" %}" class="cta-btn">Reserve Your Table</a>
       <p/>
     </ol>
   </nav>
@@ -41,12 +41,12 @@
 
         <div class="row gy-4">
 
-          <div class="col-lg-4 about-section-one" data-aos="fade-up" data-aos-delay="100">
-            <div class="card-item-one">
+          <div class="col-lg-4 about-section-one" >
+            <div class="card-item card-item-one" style="background-image: url('{% static "assets/img/section-one.jpeg" %}');" >
             </div>
           </div><!-- Card Item -->
 
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-4" >
 
             <div class="card-item text-center">
               <h3>TRADITIONAL & MODERN </h3>
@@ -58,8 +58,8 @@
 
           </div><!-- Card Item -->
 
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="card-item-three">
+          <div class="col-lg-4" >
+            <div class="card-item card-item-three" style="background-image: url('{% static "assets/img/section-two.jpeg" %}');">
               
           </div><!-- Card Item -->
 
@@ -105,8 +105,8 @@
               </span></li>
             </ul>
 
-            <p>
-              At [Your Restaurant Name], we celebrate the diversity of African cuisine. Whether you're craving a hearty meal, a spicy delicacy, or a sweet treat, our chefs are here to deliver an unforgettable dining experience. Come join us and savor the true taste of Africa.
+            <p class="restaurant-description">
+              At Restaurantly, we celebrate the diversity of African cuisine. Whether you're craving a hearty meal, a spicy delicacy, or a sweet treat, our chefs are here to deliver an unforgettable dining experience. Come join us and savor the true taste of Africa.
             </p>
 
           </div>
