@@ -11,7 +11,7 @@
 
 
         <!-- Page Title -->
-        <div class="page-title position-relative" data-aos="fade" style="background-image: url({% static 'assets/img/page-title-bg.webp' %});">
+        <div class="page-title position-relative" data-aos="fade" style="background-image: url({% static 'assets/img/about-bg.jpg' %});">
           <div class="container position-relative">
          
             <h1>TASTE THE DIFFERENCE<br></h1>
@@ -325,10 +325,20 @@
 
 
 
-    <div class="page-title position-relative mb-2" data-aos="fade" style="background-image: url({% static 'assets/img/page-title-bg.webp' %});">
+    <div class="page-title position-relative mb-2 text-center" data-aos="fade" style="background-image: url({% static 'assets/img/page-title-bg.webp' %}); ">
       <div class="container position-relative">
-        <h1>RESERVE A TABLE NOW <br></h1>
+        <div class="row justify-content-center">
+      <div class="col-sm-4 text-center">
+        <h3 class="mb-2">Book Your Table <br></h3>
+        <br />
 
+        <p class="reserve-link">
+          <a href="{% url "restaurantfeature:reservation" %}" class="cta-btn" mt-2>Reserve Your Table</a>
+        <p/>
+
+        </div>
+
+      </div>
       </div>
     </div><!-- End Page Title -->
 
